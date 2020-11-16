@@ -1,0 +1,40 @@
+.new-item {
+    position: sticky;
+    top: 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    form {
+        display: flex;
+        justify-content: space-between;
+
+        label {
+            position: absolute;
+            left: -10000px;
+        }
+
+        input[type="text"] {
+            width: 75%;
+            font-size: 1.25rem;
+            border: 2px solid $textbox-bordercolor;
+            border-radius: 5px;
+            padding: 0.75rem;
+            outline: none;
+
+            &:focus,
+            &:hover {
+              box-shadow: 4px 2px 5px #000;
+            }
+        }
+
+        .btn--add {
+          font-size: 1.25rem;
+          background-color: $button-addcolor;
+          padding: 0.75rem;
+          @include mq(768px) {
+            font-size: 1.5rem;
+          }
+        }
+
+    }
+}
