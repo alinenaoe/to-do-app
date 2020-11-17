@@ -28,7 +28,7 @@ body {
 
 section {
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -47,10 +47,8 @@ section {
 }
 
 .btn:hover, .btn:focus {
-  -webkit-filter: brightness(120%);
-          filter: brightness(120%);
-  -webkit-box-shadow: 4px 2px 5px #000;
-          box-shadow: 4px 2px 5px #000;
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
 }
 
 .new-item {
@@ -68,6 +66,10 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #f6f6f6;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-left: -1px;
 }
 
 .new-item form label {
@@ -85,8 +87,7 @@ section {
 }
 
 .new-item form input[type="text"]:focus, .new-item form input[type="text"]:hover {
-  -webkit-box-shadow: 4px 2px 5px #000;
-          box-shadow: 4px 2px 5px #000;
+  border-color: #ff8e6e;
 }
 
 .new-item form .btn--add {

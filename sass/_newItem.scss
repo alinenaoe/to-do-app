@@ -7,6 +7,10 @@
     form {
         display: flex;
         justify-content: space-between;
+        background-color: $background-color;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-left: -1px;
 
         label {
             position: absolute;
@@ -23,7 +27,7 @@
 
             &:focus,
             &:hover {
-              box-shadow: 4px 2px 5px #000;
+              border-color: $button-addcolor;
             }
         }
 
