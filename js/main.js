@@ -62,7 +62,6 @@ const clearListDisplay = () => {
 
 const deleteContents = (parentElement) => {
   let child = parentElement.lastElementChild;
-  console.log(child)
 
   while (child) {
     parentElement.removeChild(child);
