@@ -86,7 +86,7 @@ const buildListItem = (item) => {
   check.id = item.getId();
   check.tabIndex = 0;
 
-  addClickEventListenerToCheckBox(check)
+  addClickListenerToCheckBox(check)
 
   const label = document.createElement('label');
   label.htmlFor = item.getId();
@@ -99,14 +99,22 @@ const buildListItem = (item) => {
   container.appendChild(div);
 }
 
-const addClickEventListenerToCheckBox = (checkbox) => {
+const addClickListenerToCheckBox = (checkbox) => {
   checkbox.addEventListener('click', () => {
     toDoList.removeItemFromList(checkbox.id);
     updatePersistentData(toDoList.getList());
+
+    const removedText = getLabelText(checkbox.id);
+    updateScreenReaderConfirmation(removedText, "removed from list");
+
     setTimeout(() => {
       refreshThePage();
     }, 1000)
   })
+}
+
+const getLabelText = (checkboxId) => {
+  return document.getElementById(checkboxId).nextElementSibling.textContent;
 }
 
 const updatePersistentData = (listArray) => {
@@ -131,6 +139,7 @@ const processSubmission = () => {
   toDoList.addItemToList(toDoItem)
 
   updatePersistentData(toDoList.getList());
+  updateScreenReaderConfirmation(newEntryText, "added");
   refreshThePage();
 }
 
@@ -154,4 +163,8 @@ const createNewItem = (itemId, itemText) => {
   toDo.setId(itemId);
   toDo.setItem(itemText);
   return toDo;
+}
+
+const updateScreenReaderConfirmation = (newEntryText, actionVerb) => {
+  document.getElementById('confirmation').textContent = `${newEntryText} ${actionVerb}.`
 }

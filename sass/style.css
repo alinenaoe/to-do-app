@@ -166,4 +166,9 @@ section {
 .list-container .item input[type="checkbox"] label {
   font-size: 1.1rem;
 }
+
+.list-container .confirmation {
+  position: absolute;
+  left: -10000px;
+}
 /*# sourceMappingURL=style.css.map */
